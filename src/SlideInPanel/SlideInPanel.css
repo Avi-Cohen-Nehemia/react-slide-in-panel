@@ -1,0 +1,13 @@
+.backdrop {
+    position: absolute;
+    z-index: 10000;
+    height: 100vh;
+    background-color: #333333;
+}
+
+.panel {
+    position: absolute;
+    height: 100%;
+    transition: width 1s, height 1s;
+    background-color: black;
+}
