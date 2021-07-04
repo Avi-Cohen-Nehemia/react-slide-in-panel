@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './SlideInPanel.css';
 
 const SlideInPanel = ({ from, size, isOpen, children, handleBackdrop }) => {
@@ -58,12 +59,18 @@ const SlideInPanel = ({ from, size, isOpen, children, handleBackdrop }) => {
     )
 };
 
+SlideInPanel.propTypes = {
+    isOpen: PropTypes.bool,
+    size: PropTypes.number,
+    from: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+    children: PropTypes.node,
+    handleBackdrop: PropTypes.func,
+};
+
 SlideInPanel.defaultProps = {
     isOpen: false,
-    size: 60,
+    size: 40,
     from: 'left',
-    children: null,
-    handleBackdrop: null,
 };
 
 export default SlideInPanel;
