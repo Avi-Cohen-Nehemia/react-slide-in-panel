@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './SlideInPanel.css';
 
-const SlideInPanel = ({ from, size, isOpen, children, handleBackdrop }) => {
+const SlideInPanel = ({ from, size, isOpen, children, handleBackdrop, panelTransition }) => {
 
     const isVertical = from === 'top' || from === 'bottom';
     const isHorizontal = from === 'right' || from === 'left';
@@ -50,6 +50,7 @@ const SlideInPanel = ({ from, size, isOpen, children, handleBackdrop }) => {
                         right: from === 'right' ? 0 : '',
                         bottom: from === 'bottom' ? 0 : '',
                         left: from === 'left' ? 0 : '',
+                        transition: `width ${panelTransition}ms, height ${panelTransition}ms`,
                     }}
                 >
                     {children}
@@ -65,12 +66,14 @@ SlideInPanel.propTypes = {
     from: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
     children: PropTypes.node,
     handleBackdrop: PropTypes.func,
+    panelTransition: PropTypes.number,
 };
 
 SlideInPanel.defaultProps = {
     isOpen: false,
     size: 40,
     from: 'left',
+    panelTransition: 1000,
 };
 
 export default SlideInPanel;

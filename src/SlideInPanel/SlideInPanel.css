@@ -11,6 +11,5 @@
 .panel {
     position: absolute;
     height: 100%;
-    transition: width 1s, height 1s;
     background-color: black;
 }

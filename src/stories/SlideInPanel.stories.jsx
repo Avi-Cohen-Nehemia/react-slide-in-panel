@@ -15,6 +15,13 @@ export default {
       control: 'text',
       defaultValue: 'left',
     },
+    handleBackdrop: {
+      action: 'backdrop clicked!',
+    },
+    panelTransition: {
+      control: 'number',
+      defaultValue: 1000,
+    },
   },
   component: SlideInPanel,
   title: 'Components/SlideInPanel',
