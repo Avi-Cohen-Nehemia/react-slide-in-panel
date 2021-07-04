@@ -22,6 +22,10 @@ export default {
       control: 'number',
       defaultValue: 1000,
     },
+    backdropTransition: {
+      control: 'number',
+      defaultValue: 1000,
+    },
   },
   component: SlideInPanel,
   title: 'Components/SlideInPanel',
