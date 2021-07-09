@@ -34,3 +34,10 @@ export default {
 const Template = (props) => <SlideInPanel {...props} />;
 
 export const Default = Template.bind({});
+
+export const WithChildren = (props) => (
+  <SlideInPanel {...props}>
+    <div>I'm a child</div>
+    <button>Some button</button>
+  </SlideInPanel>
+);
