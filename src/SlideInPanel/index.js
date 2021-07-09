@@ -46,7 +46,7 @@ const SlideInPanel = ({
                 style={{
                     pointerEvents: isOpen ? 'auto' : 'none',
                     backgroundColor: isOpen ? 'rgba(51, 51, 51, 0.7)' : 'transparent',
-                    transition: `background-color ${backdropTransition}ms`,
+                    transition: `all ${backdropTransition}ms`,
                 }}
             >
                 <div
@@ -58,7 +58,7 @@ const SlideInPanel = ({
                         right: from === 'right' ? 0 : '',
                         bottom: from === 'bottom' ? 0 : '',
                         left: from === 'left' ? 0 : '',
-                        transition: `width ${panelTransition}ms, height ${panelTransition}ms`,
+                        transition: `all ${panelTransition}ms`,
                     }}
                 >
                     {children}
