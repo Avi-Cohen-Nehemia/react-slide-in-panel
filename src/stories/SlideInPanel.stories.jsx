@@ -7,12 +7,13 @@ export default {
       control: 'boolean',
       defaultValue: false,
     },
-    width: {
+    size: {
       control: 'number',
       defaultValue: 60,
     },
     from: {
-      control: 'text',
+      control: 'inline-radio',
+      options: ['right', 'left', 'top', 'bottom'],
       defaultValue: 'left',
     },
     handleBackdrop: {
