@@ -23,9 +23,17 @@ export default {
       control: 'number',
       defaultValue: 1000,
     },
+    panelColor: {
+      control: 'color',
+      defaultValue: '#000000',
+    },
     backdropTransition: {
       control: 'number',
       defaultValue: 1000,
+    },
+    backdropColor: {
+      control: 'text',
+      defaultValue: 'rgba(51, 51, 51, 0.7)',
     },
   },
   component: SlideInPanel,

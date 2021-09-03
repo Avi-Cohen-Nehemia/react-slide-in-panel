@@ -7,9 +7,11 @@ const SlideInPanel = ({
     size,
     isOpen,
     children,
-    handleBackdrop,
     panelTransition,
+    panelColor,
     backdropTransition,
+    handleBackdrop,
+    backdropColor,
 }) => {
     const isVertical = from === 'top' || from === 'bottom';
     const isHorizontal = from === 'right' || from === 'left';
@@ -45,7 +47,7 @@ const SlideInPanel = ({
                 onClick={() => handleBackdrop()}
                 style={{
                     pointerEvents: isOpen ? 'auto' : 'none',
-                    backgroundColor: isOpen ? 'rgba(51, 51, 51, 0.7)' : 'transparent',
+                    backgroundColor: isOpen ? backdropColor : 'transparent',
                     transition: `all ${backdropTransition}ms`,
                 }}
             >
@@ -59,6 +61,7 @@ const SlideInPanel = ({
                         bottom: from === 'bottom' ? 0 : '',
                         left: from === 'left' ? 0 : '',
                         transition: `all ${panelTransition}ms`,
+                        backgroundColor: panelColor,
                     }}
                 >
                     {children}
@@ -73,9 +76,11 @@ SlideInPanel.propTypes = {
     size: PropTypes.number,
     from: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
     children: PropTypes.node,
-    handleBackdrop: PropTypes.func,
     panelTransition: PropTypes.number,
+    panelColor: PropTypes.string,
+    handleBackdrop: PropTypes.func,
     backdropTransition: PropTypes.number,
+    backgroundColor: PropTypes.string,
 };
 
 SlideInPanel.defaultProps = {
@@ -83,7 +88,9 @@ SlideInPanel.defaultProps = {
     size: 40,
     from: 'left',
     panelTransition: 1000,
+    panelColor: '#000000',
     backdropTransition: 1000,
+    backdropColor: 'rgba(51, 51, 51, 0.7)',
 };
 
 export default SlideInPanel;
